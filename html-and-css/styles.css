@@ -1,0 +1,199 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding-right: 150px;
+  padding-left: 150px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.marquee-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.marquee {
+  display: inline-flex;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.marquee::before {
+  content: "✨";
+}
+
+.marquee::after {
+  content: "✨";
+}
+
+h1 {
+  text-align: center;
+}
+
+.posts {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.posts div h3::before {
+  content: "📌";
+  margin-right: 5px;
+}
+
+.posts div::after {
+  content: "";
+  height: 5px;
+  width: 600px;
+  background-color: lightblue;
+  display: block;
+  margin-top: 40px;
+}
+
+.posts div p:nth-child(2) {
+  font-weight: bold;
+}
+
+.posts div p:nth-child(n + 2) {
+  margin-left: 20px;
+}
+
+.posts .last-post::after {
+  content: "";
+  display: none;
+}
+
+.test {
+  color: orange;
+}
+
+.test::before {
+  content: "✨";
+  font-size: 30px;
+}
+
+.test2 {
+  font-weight: bold;
+  align-items: end;
+  line-height: 0;
+}
+
+.test2::before {
+  content: "";
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  border: 2px solid black;
+  border-radius: 100%;
+  margin: 0 5px;
+  translate: 0 3px;
+}
+
+.test2::after {
+  content: "!";
+  margin-left: 2px;
+  font-size: large;
+  font-weight: bold;
+}
+
+.end {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.grid-picture {
+  margin: 0;
+  padding: 0;
+}
+
+.grid2-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.my-page {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr 2fr;
+  grid-template-areas:
+    "nav-header nav-header nav-header nav-side"
+    "main-body main-body .        nav-side"
+    "footer footer footer footer";
+}
+
+.my-page-header {
+  grid-area: nav-header;
+  background-color: red;
+  padding: 100px;
+}
+
+.my-page-body {
+  grid-area: main-body;
+  background-color: blue;
+  padding: 10px;
+  height: 600px;
+}
+
+.my-page-sidebar {
+  grid-area: nav-side;
+  background-color: green;
+  padding: 10px;
+}
+
+.my-page-footer {
+  grid-area: footer;
+  background-color: yellow;
+  padding: 200px;
+}
+
+.grid-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.animation-layout {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinny-boi {
+  animation: spin 2s linear infinite;
+  display: inline-block;
+  font-size: 30px;
+}
