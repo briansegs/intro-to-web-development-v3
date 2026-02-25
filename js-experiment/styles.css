@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px 40px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.header {
+  text-align: center;
+}
+
+.box {
+  height: 150px;
+  width: 150px;
+  background-color: aliceblue;
+  border: 2px solid black;
+  margin-bottom: 10px;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+}
+
+.button-container button {
+  padding: 4px 5px;
+}

@@ -3,22 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+
     <title>Js experiment</title>
   </head>
   <body>
-    <h1>Js experiments</h1>
+    <div class="content">
+      <h1 class="header">Js experiments</h1>
 
-    <ul>
-      <li class="js-target">Will change</li>
-      <li class="js-target">Will change</li>
-      <li>Wont change</li>
-      <li class="js-target">Will change</li>
-      <li class="js-target">Will change</li>
-      <li>Wont change</li>
-      <li class="js-target">Will change</li>
-    </ul>
+      <div>
+        <h2>List for DOM experiment</h2>
+
+        <ul>
+          <li class="js-target">Will change</li>
+          <li class="js-target">Will change</li>
+          <li>Wont change</li>
+          <li class="js-target">Will change</li>
+          <li class="js-target">Will change</li>
+          <li>Wont change</li>
+          <li class="js-target">Will change</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Alert button</h2>
+        <button class="alert-button">click me</button>
+      </div>
+
+      <div>
+        <h2>Input to paragraph</h2>
+
+        <input type="text" class="input" />
+        <p class="paragraph">Type and see what happens</p>
+      </div>
+
+      <div>
+        <h2>Color changing box</h2>
+
+        <div class="box"></div>
+        <input
+          type="text"
+          class="color-input"
+          placeholder="Type a color here"
+        />
+      </div>
+
+      <div>
+        <h2>Bubbling buttons</h2>
+
+        <div class="button-container">
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+          <button>5</button>
+        </div>
+      </div>
+    </div>
 
     <script src="experiment1.js"></script>
     <script src="experiment2.js"></script>
+    <script src="experiment3.js"></script>
   </body>
 </html>
