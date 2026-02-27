@@ -39,17 +39,20 @@
   font-size: 36px;
 }
 
-.row {
-  height: 16.6667%;
-  width: 100%;
-  display: flex;
+.key-pad {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 6px;
+  height: 100%;
+}
+
+.clear {
+  grid-column: span 2;
 }
 
 .btn {
   background-color: antiquewhite;
   border-radius: 12px;
-  height: 100%;
   font-size: 36px;
   cursor: pointer;
 }
@@ -61,54 +64,8 @@
 .op {
   background-color: chocolate;
   color: white;
-  width: 25%;
-}
-
-.clear {
-  width: 50%;
-}
-
-.back {
-  width: 25%;
-}
-
-.num {
-  width: 25%;
 }
 
 .zero {
-  width: 75%;
-}
-
-/* cal2 */
-
-.cal2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 6px;
-  height: 100%;
-}
-
-.clear2 {
-  grid-column: span 2;
-}
-
-.btn2 {
-  background-color: antiquewhite;
-  border-radius: 12px;
-  font-size: 36px;
-  cursor: pointer;
-}
-
-.btn2:hover {
-  opacity: 80%;
-}
-
-.op2 {
-  background-color: chocolate;
-  color: white;
-}
-
-.zero2 {
   grid-column: span 3;
 }

@@ -1,14 +1,14 @@
-const btn = "btn2";
-const clearBtn = `${btn} clear2`;
-const backBtn = `${btn} back2`;
-const numBtn = `${btn} num2`;
-const operatorBtn = `${btn} op2`;
-const divideBtn = `${operatorBtn} divide2`;
-const multiplyBtn = `${operatorBtn} multiply2`;
-const minusBtn = `${operatorBtn} minus2`;
-const plusBtn = `${operatorBtn} plus2`;
-const zeroBtn = `${btn} zero2`;
-const equalsBtn = `${operatorBtn} equals2`;
+const btn = "btn";
+const clearBtn = `${btn} clear`;
+const backBtn = `${btn} back`;
+const numBtn = `${btn} num`;
+const operatorBtn = `${btn} op`;
+const divideBtn = `${operatorBtn} divide`;
+const multiplyBtn = `${operatorBtn} multiply`;
+const minusBtn = `${operatorBtn} minus`;
+const plusBtn = `${operatorBtn} plus`;
+const zeroBtn = `${btn} zero`;
+const equalsBtn = `${operatorBtn} equals`;
 
 const buttonData = [
   {
@@ -37,7 +37,7 @@ const buttonData = [
   },
   {
     class: multiplyBtn,
-    content: "X",
+    content: "x",
   },
   {
     class: numBtn,
@@ -81,8 +81,8 @@ const buttonData = [
   },
 ];
 
-const cal2 = document.querySelector(".cal2");
+const keyPad = document.querySelector(".key-pad");
 
 for (const button of buttonData) {
-  cal2.innerHTML += `<button class="${button.class}">${button.content}</button>`;
+  keyPad.innerHTML += `<button class="${button.class}">${button.content}</button>`;
 }
