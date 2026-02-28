@@ -82,24 +82,33 @@ const buttonData = [
 ];
 
 function clearCalcInput() {
-  calcInput.value = "";
+  calcInput.value = "0";
+  reset = true;
 }
+
+const calcInput = document.querySelector(".calculator-input");
+
+let inputs = [];
+calcInput.value = "0";
+let reset = true;
 
 // populate buttons in dom
 const keyPad = document.querySelector(".key-pad");
 
 for (const button of buttonData) {
-  keyPad.innerHTML += `<button class="${button.class}">${button.content}</button>`;
+  const btn = document.createElement("button");
+  btn.className = button.class;
+  btn.textContent = button.content;
+  keyPad.appendChild(btn);
 }
-
-let inputs = [];
 
 // Step back
 const backKey = document.querySelector(".back");
 
 backKey.addEventListener("click", () => {
-  if (inputs.length === 1) {
-    calcInput = "";
+  if (calcInput.value.length <= 1) {
+    calcInput.value = "0";
+    reset = true;
   } else {
     calcInput.value = calcInput.value.slice(0, -1);
   }
@@ -107,11 +116,15 @@ backKey.addEventListener("click", () => {
 
 // Add numbers to Input
 const numberKeys = document.querySelectorAll(".num");
-const calcInput = document.querySelector(".calculator-input");
 
 for (const key of numberKeys) {
   key.addEventListener("click", () => {
-    calcInput.value += key.innerText;
+    if (reset === true) {
+      calcInput.value = key.innerText;
+      reset = false;
+    } else {
+      calcInput.value += key.innerText;
+    }
   });
 }
 
@@ -160,15 +173,15 @@ for (const key of calcKeys) {
 // Equals
 const equalsKey = document.querySelector(".equals");
 
-const errorMsg = "ERROR - click clear";
+const errorMsg = "ERROR-click clear";
 
 equalsKey.addEventListener("click", () => {
-  if (inputs.length != 2) {
+  if (inputs.length !== 2) {
     calcInput.value = errorMsg;
   } else {
     inputs.push(calcInput.value);
 
-    [a, operation, b] = inputs;
+    const [a, operation, b] = inputs;
     const num1 = Number(a);
     const num2 = Number(b);
 
@@ -182,7 +195,14 @@ equalsKey.addEventListener("click", () => {
     if (Number.isNaN(num1) || Number.isNaN(num2)) {
       calcInput.value = errorMsg;
     } else {
+      if (operation === "÷" && num2 === 0) {
+        calcInput.value = errorMsg;
+        return;
+      }
+
       calcInput.value = operations[operation](num1, num2);
+      inputs = [];
+      reset = true;
     }
   }
 });
